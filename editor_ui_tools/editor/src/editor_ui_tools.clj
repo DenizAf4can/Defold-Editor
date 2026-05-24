@@ -13,8 +13,7 @@
             [editor.resource :as resource]
             [editor.ui :as ui]
             [editor.view :as view]
-            [editor.workspace :as workspace]
-            [service.log :as log])
+            [editor.workspace :as workspace])
   (:import [java.awt RenderingHints]
            [java.awt.image BufferedImage]
            [java.io ByteArrayOutputStream File]
@@ -76,20 +75,14 @@
 
 (defn- warn
   [message & kvs]
-  (try
-    (let [details (apply hash-map kvs)]
-      (log/warn :message (str "Editor UI Tools: " message)
-                :exception (:exception details)))
-    (catch Throwable _
-      (binding [*out* *err*]
-        (println (str "Editor UI Tools: " message))))))
+  (binding [*out* *err*]
+    (println (str "Editor UI Tools: " message))
+    (when-let [exception (:exception (apply hash-map kvs))]
+      (.printStackTrace ^Throwable exception))))
 
 (defn- info
   [message & kvs]
-  (try
-    (log/info :message (str "Editor UI Tools: " message))
-    (catch Throwable _
-      (println (str "Editor UI Tools: " message)))))
+  (println (str "Editor UI Tools: " message)))
 
 (defn- project-file
   ^File [workspace path]
