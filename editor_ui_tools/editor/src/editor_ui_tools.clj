@@ -77,7 +77,9 @@
 (defn- warn
   [message & kvs]
   (try
-    (apply log/warn :message (str "Editor UI Tools: " message) kvs)
+    (let [details (apply hash-map kvs)]
+      (log/warn :message (str "Editor UI Tools: " message)
+                :exception (:exception details)))
     (catch Throwable _
       (binding [*out* *err*]
         (println (str "Editor UI Tools: " message))))))
@@ -85,7 +87,7 @@
 (defn- info
   [message & kvs]
   (try
-    (apply log/info :message (str "Editor UI Tools: " message) kvs)
+    (log/info :message (str "Editor UI Tools: " message))
     (catch Throwable _
       (println (str "Editor UI Tools: " message)))))
 
