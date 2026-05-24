@@ -33,23 +33,8 @@ own project. They are not magic. Hmph.
 - Adds hover previews for image resources in the Asset Browser.
 - Opens PNG/JPG/JPEG/WebP files in an editor preview tab.
 
-WebP preview works best with **Defold WebP Import** installed. Without it, WebP
+WebP preview works best with **Defold WebP** installed. Without it, WebP
 preview will fail politely because Java ImageIO has no built-in WebP reader.
-
-## Install
-
-Add the release archive to `game.project`:
-
-```ini
-https://github.com/DenizAf4can/Defold-WebP/archive/refs/tags/v0.3.zip
-```
-
-Then run:
-
-```text
-Project -> Fetch Libraries
-Project -> Reload Editor Scripts
-```
 
 ## Configure
 
