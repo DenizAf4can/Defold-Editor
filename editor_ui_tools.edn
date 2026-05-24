@@ -1,0 +1,49 @@
+{:theme {:stylesheets ["/editor_theme.css"]
+         :auto-reload? true}
+
+ :menus [{:id :extensions
+          :label "Extensions"
+          :items [{:label "Fetch Libraries"
+                   :command :project.fetch-libraries}
+                  {:label "Reload Editor Scripts"
+                   :command :project.reload-editor-scripts}
+                  {:label "Reload Project Theme"
+                   :command :editor-ui-tools.reload-theme}
+                  {:separator true}
+                  {:label "Export Selected WebP Frames"
+                   :command :webp-import.export-selected-frames}
+                  {:separator true}
+                  {:label "Open Logs"
+                   :command :help.open-logs}
+                  {:label "Open Editor Server"
+                   :command :help.open-editor-server}]}]
+
+ :tabs [{:id :extensions
+         :label "Extensions"
+         :area :bottom
+         :type :actions
+         :items [{:label "Fetch Libraries"
+                  :command :project.fetch-libraries}
+                 {:label "Reload Editor Scripts"
+                  :command :project.reload-editor-scripts}
+                 {:label "Reload Project Theme"
+                  :command :editor-ui-tools.reload-theme}
+                 {:label "Export Selected WebP Frames"
+                  :command :webp-import.export-selected-frames}
+                 {:label "Preferences"
+                  :command :app.preferences}]}
+
+        {:id :notes
+         :label "Project Notes"
+         :area :bottom
+         :type :text
+         :resource "/EDITOR_NOTES.md"}
+
+        {:id :status
+         :label "Extensions Status"
+         :area :bottom
+         :type :status}]
+
+ :image-preview {:asset-browser-hover? true
+                 :editor-tab? true
+                 :extensions ["png" "jpg" "jpeg" "webp"]}}

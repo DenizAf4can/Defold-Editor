@@ -1,0 +1,25 @@
+.root {
+    -df-background: #20262b;
+    -df-component-dark: #242b31;
+    -df-component-light: #303842;
+    -df-text: #e6edf2;
+    -df-text-selected: #ffffff;
+    -df-defold-orange: #ff6f3c;
+}
+
+.editor-ui-tools-tab {
+    -fx-padding: 10;
+}
+
+.editor-ui-tools-tab .button {
+    -fx-alignment: center-left;
+}
+
+.editor-ui-tools-separator {
+    -fx-background-color: rgba(255, 255, 255, 0.14);
+}
+
+.editor-ui-tools-image-preview {
+    -fx-background-color: transparent;
+}
+
