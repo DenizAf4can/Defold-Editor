@@ -41,8 +41,7 @@ preview will fail politely because Java ImageIO has no built-in WebP reader.
 Add the release archive to `game.project`:
 
 ```ini
-[project]
-dependencies#0 = https://github.com/DenizAf4can/Defold-Editor-UI-Tools/archive/refs/tags/v.0.1.zip
+https://github.com/DenizAf4can/Defold-WebP/archive/refs/tags/v0.3.zip
 ```
 
 Then run:
