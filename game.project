@@ -4,5 +4,4 @@ version = 0.1.0
 
 [library]
 include_dirs = editor_ui_tools
-defold_min_version = 1.12.4
 
